@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.likg.auth.dao.UserMapper;
-import com.likg.auth.domain.Page;
-import com.likg.auth.domain.Role;
+import com.likg.auth.domain.EasyuiPage;
 import com.likg.auth.domain.User;
 
 @Service
@@ -19,15 +18,15 @@ public class UserService {
 	@Resource
 	private UserMapper userMapper;
 	
-	public Page<User> getPage(Page<User> userPage, User user) throws Exception {
+	public EasyuiPage<User> getPage(EasyuiPage<User> page, User user) throws Exception {
 		Integer totalCount = userMapper.getCount(user);
-		userPage.setTotal(totalCount);
+		page.setTotal(totalCount);
 		if(totalCount > 0) {
-			RowBounds rowBounds = new RowBounds(userPage.getIndex(), userPage.getPageSize());
+			RowBounds rowBounds = new RowBounds(page.getIndex(), page.getPageSize());
 			List<User> userList = userMapper.getPage(user, rowBounds);
-			userPage.setRows(userList);
+			page.setResult(userList);
 		}
-		return userPage;
+		return page;
 	}
 
 	

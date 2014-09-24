@@ -5,8 +5,6 @@
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/hamcrest-core-1.1.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jackson-core-asl-1.8.4.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jackson-mapper-asl-1.8.4.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jstl.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/junit-4.10.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/log4j-1.2.17.jar"/>
@@ -22,10 +20,13 @@
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-jdbc-3.2.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-jms-3.2.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-tx-3.2.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-web-3.2.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-web-3.2.5.RELEASE.jar" sourcepath="E:/maven/repo/org/springframework/spring-web/3.2.5.RELEASE/spring-web-3.2.5.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-webmvc-3.2.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="lib/jsp-api.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jackson-core-2.2.3.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jackson-databind-2.2.3.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jackson-annotations-2.2.3.jar"/>
 	<classpathentry kind="output" path="webapp/WEB-INF/classes"/>
 </classpath>

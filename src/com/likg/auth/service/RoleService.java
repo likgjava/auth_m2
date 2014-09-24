@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.likg.auth.dao.RoleMapper;
-import com.likg.auth.domain.Page;
+import com.likg.auth.domain.EasyuiPage;
 import com.likg.auth.domain.Role;
 
 @Service
@@ -45,15 +45,15 @@ public class RoleService {
 		roleMapper.deleteRole(id);
 	}
 
-	public Page<Role> getPage(Page<Role> rolePage, Role role) throws Exception {
+	public EasyuiPage<Role> getPage(EasyuiPage<Role> page, Role role) throws Exception {
 		Integer totalCount = roleMapper.getCount(role);
-		rolePage.setTotal(totalCount);
+		page.setTotal(totalCount);
 		if(totalCount > 0) {
-			RowBounds rowBounds = new RowBounds(rolePage.getIndex(), rolePage.getPageSize());
+			RowBounds rowBounds = new RowBounds(page.getIndex(), page.getPageSize());
 			List<Role> roleList = roleMapper.getPage(role, rowBounds);
-			rolePage.setRows(roleList);
+			page.setResult(roleList);
 		}
-		return rolePage;
+		return page;
 	}
 
 	public List<Role> getRoleListByUser(int userId) {

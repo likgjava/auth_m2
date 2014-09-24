@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.likg.auth.domain.Page;
+import com.likg.auth.domain.EasyuiPage;
 import com.likg.auth.domain.Role;
 import com.likg.auth.domain.User;
 import com.likg.auth.service.RoleService;
@@ -45,26 +45,21 @@ public class UserController {
 	
 	/**
 	 * 分页获取列表数据
-	 * @param user
-	 * @param page
-	 * @param rows
+	 * @param user 查询参数
+	 * @param page 分页信息
 	 * @return
 	 * @author likaige
-	 * @create 2014年3月13日 下午5:05:55
+	 * @create 2014年9月24日 下午3:10:29
 	 */
 	@ResponseBody
 	@RequestMapping("/getPage")
-	public Page<User> getPage(User user, Integer page, Integer rows) {
-		Page<User> userPage = new Page<User>();
+	public EasyuiPage<User> getPage(User user, EasyuiPage<User> page) {
 		try {
-			//分页获取
-			userPage.setPageSize(rows);
-			userPage.setIndex((page-1)*rows);
-			userPage = userService.getPage(userPage, user);
+			page = userService.getPage(page, user);
 		} catch (Exception e) {
 			log.error("出现异常：", e);
 		}
-		return userPage;
+		return page;
 	}
 	
 	/**

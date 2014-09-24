@@ -23,7 +23,8 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<!-- 处理返回JSON数据 -->
+	<!-- 处理返回JSON数据
+	暂时注释掉，不知道该代码的用途。如果放开则必须引入jackson1.x的jar包。
 	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
 		<property name="supportedMediaTypes">
 			<list>
@@ -31,5 +32,5 @@
 			</list>
 		</property>
 	</bean>
-	
+	 -->
 </beans>

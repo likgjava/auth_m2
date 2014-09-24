@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Repository;
 
-import com.likg.auth.domain.Page;
 import com.likg.auth.domain.Role;
 
 @Repository

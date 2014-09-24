@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.likg.auth.domain.Page;
+import com.likg.auth.domain.EasyuiPage;
 import com.likg.auth.domain.Role;
 import com.likg.auth.service.RoleService;
 
@@ -48,17 +48,13 @@ public class RoleController {
 	 */
 	@ResponseBody
 	@RequestMapping("/getPage")
-	public Page<Role> getPage(Role role, Integer page, Integer rows) {
-		Page<Role> rolePage = new Page<Role>();
+	public EasyuiPage<Role> getPage(Role role, EasyuiPage<Role> page) {
 		try {
-			//分页获取
-			rolePage.setPageSize(rows);
-			rolePage.setIndex((page-1)*rows);
-			rolePage = roleService.getPage(rolePage, role);
+			page = roleService.getPage(page, role);
 		} catch (Exception e) {
 			log.error("出现异常：", e);
 		}
-		return rolePage;
+		return page;
 	}
 	
 	/**
